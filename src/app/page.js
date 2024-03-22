@@ -18,7 +18,7 @@ export default function Home() {
           <div className="main-content-inner">
             <h1>Hi there, I'm Christian</h1>
             <p>
-              Full-stack developer from Denmark, with a focus on creative frontend. <br />
+              Full-stack developer from Copenhagen, Denmark, with a focus on creative frontend. <br />
               I love to create beautiful and functional websites, and I'm passionate about creating
               creative frontend and animations, music(listening and playing), and much more.
               <br />
@@ -166,7 +166,7 @@ export default function Home() {
         
       </div>
       <div className='gl-scene'>
-        {/* <Scene /> */}
+        <Scene />
       </div>
     </main>
   )

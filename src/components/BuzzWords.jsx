@@ -1,6 +1,6 @@
 
 const buzzItems = [
-  { id: 2, title: 'SVG and Lottie', comment: 'SVG\'s are fantastic! Be it icons or animation via Lottie, it\'s a great way to add some life to a website. <br />.. and what about those filters, yum yum droplets..<br /><br />Thank you "SVGesus"' },
+  { id: 2, title: 'SVG and Lottie', comment: 'SVG\'s are fantastic! Be it icons or animation via Lottie, it\'s a great way to add some life to a website. <br />.. and what about those filters, yum yum droplets..<br /><br />Thank you Chris Lilley aka. "svgeesus"' },
   { id: 3, title: 'CSS', comment: 'Who doesn\'t love CSS...? I\'ve worked with it for years, and I still learn new things.<br />The future is bright.. And what about CSS Houdini and WebGPU.<br />"animation-timeline", woaah!<br />Clip-path and masks... Gradients and filters... Oh my!<br />line-clamp, yea!!<br />SUBGRIIIIIIIID!!!!' },
   { id: 4, title: 'HTML', comment: '' },
   { id: 5, title: 'LocalStorage and SessionStorage and IndexedDB', comment: '.. and SessionStorage, cookies, history and IndexedDB, all the browser storage manipulation stuff.' },
