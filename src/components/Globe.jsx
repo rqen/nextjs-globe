@@ -1,9 +1,10 @@
 'use client'
 
-import * as THREE from "three"
-import { useRef } from "react"
-import { extend, useFrame, useLoader } from "@react-three/fiber";
-import { useTexture, shaderMaterial } from "@react-three/drei"
+import * as THREE from 'three'
+import gsap from 'gsap'
+import { useRef } from 'react'
+import { extend, useFrame, useLoader } from '@react-three/fiber';
+import { useTexture, shaderMaterial } from '@react-three/drei'
 
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 
@@ -40,9 +41,9 @@ export default function Globe() {
 
     void main() {
       // float intensity = 1.05 - dot(vNormal, vec3(1.0, 1.0, 0.0));
-      float intensity = 1.95 - dot(vNormal, vec3(0.0, 0.0, 1.0));
+      float intensity = 2.05 - dot(vNormal, vec3(0.0, 0.0, 1.0));
 
-      vec3 atmosphere = vec3(0.3, 0.6, 1.0) * pow(intensity, 1.5);
+      vec3 atmosphere = vec3(0.3, 0.6, 1.0) * pow(intensity, 1.1);
       // vec3 atmosphere = vec3(1., 0., 0.) * pow(intensity, 0.5);
 
       gl_FragColor = vec4(atmosphere * texture2D(globeTexture, vUV).xyz, 1.0);
@@ -53,8 +54,8 @@ export default function Globe() {
   `;
 
   return (
-    <mesh ref={sphere}>
-      <sphereGeometry args={[1, 200]} />
+    <mesh position={[0, 0, 0]} ref={sphere}>
+      <sphereGeometry args={[1.5, 50, 50]} />
       <shaderMaterial
         args={[{
           vertexShader,
@@ -68,20 +69,6 @@ export default function Globe() {
         }]}
         side={THREE.DoubleSide}
       />
-      
     </mesh>
   )
 }
- 
-
-
-// {/* <shaderMaterial
-//         args={[{
-//           vertexShader,
-//           fragmentShader,
-//           uniforms: {
-//             globeTexture: {value: earthUvMap}
-//           }
-//         }]}
-//         // side={THREE.DoubleSide}
-//       /> */}

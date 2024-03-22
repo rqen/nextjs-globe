@@ -1,0 +1,136 @@
+@property --gradient-text-bg-rotation {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+@property --gradient-text-bg-x {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+@property --gradient-text-bg-y {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.hero {
+  /* background-color: red; */
+  /* color: white; */
+
+  .hero-text { /* h1-tag */
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    max-width: max-content;
+  }
+
+  .text-row:first-child {
+    display: block;
+    grid-column: 1 / 3;
+  }
+
+  .text-row:nth-child(2) {
+    text-align: right;
+    grid-column: 2 / 4;
+  }
+
+  .colored-text {
+    /* color: #b4d455; */
+    color: var(--highlighted-text-color);
+    clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
+    animation: reveal-left 2s 1.5s linear forwards;
+  }
+  .colored-text:nth-child(2) {
+    animation-name: reveal-right;
+  }
+  .gradient-text {
+    --gradient-text-bg-rotation: -6;
+    --gradient-text-bg-x: 120;
+    --gradient-text-bg-y: 90;
+    background-image: conic-gradient(
+      from calc(var(--gradient-text-bg-rotation) * 1deg) at calc(var(--gradient-text-bg-x) * 1%) calc(var(--gradient-text-bg-y) * 1%), 
+      var(--highlighted-text-color) 0% 25%, 
+      var(--highlighted-text-color-dark) 25% 27%, 
+      var(--highlighted-text-color) 27% 48%, 
+      var(--highlighted-text-color-dark) 48% 50%, 
+      var(--highlighted-text-color) 50% 75%, 
+      var(--highlighted-text-color-dark) 75% 77%,
+      var(--highlighted-text-color) 77% 100%
+    );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: var(--gradient-text-bg-x) 1s 1s ease;
+    animation: gradient-rotation 20s 6.5s linear forwards infinite;
+  }
+
+  .regular-text {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    /* animation: second-anim 1.5s 3.4s ease-in-out forwards; */
+    animation: second-anim 2.2s 3.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+}
+
+@keyframes gradient-rotation {
+  0% {
+    --gradient-text-bg-rotation: -6;
+    --gradient-text-bg-x: 120;
+    --gradient-text-bg-y: 90;
+  }
+  30% {
+    --gradient-text-bg-rotation: -6;
+    --gradient-text-bg-x: 120;
+    --gradient-text-bg-y: 90;
+  }
+  100% {
+    --gradient-text-bg-rotation: 354;
+    /* --gradient-text-bg-x: 50;
+    --gradient-text-bg-y: 70; */
+  }
+}
+
+@keyframes reveal-right {
+  0% {
+    clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
+  }
+  20% {
+    clip-path: polygon(90% 0%, 100% 0, 100% 100%, 80% 100%);
+  }
+  80% {
+    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 10% 100%);
+  }
+  89% {
+    clip-path: polygon(10% 0%, 100% 0, 100% 100%, 5% 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes reveal-left {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0, 0% 100%, 0% 100%);
+  }
+  20% {
+    clip-path: polygon(0% 0%, 10% 0, 20% 100%, 0% 100%);
+  }
+  80% {
+    clip-path: polygon(0% 0%, 80% 0, 90% 100%, 0% 100%);
+  }
+  89% {
+    clip-path: polygon(00% 0%, 90% 0, 95% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes second-anim {
+  0% {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}

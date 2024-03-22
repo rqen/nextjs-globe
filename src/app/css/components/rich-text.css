@@ -1,0 +1,45 @@
+
+.rich-text {
+  font-size: 1rem;
+  line-height: 1.45rem;
+  font-weight: 200;
+
+  h1 {
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    font-weight: bold;
+    margin-block-end: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    font-weight: bold;
+    margin-block-end: 1.2rem;
+  }
+
+  p {
+    font-weight: 200;
+  }
+
+  p,
+  ul {
+    margin-block-end: 1.6rem;
+  }
+
+  p + ul {
+    margin-block-start: -.9rem;
+  }
+
+  ul:not(.-bullets) li {
+    padding-inline-start: 1.6rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:not(.link):hover {
+    text-decoration: underline;
+  }
+}

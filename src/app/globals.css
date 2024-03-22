@@ -1,20 +1,25 @@
+@import './css/components/rich-text.css';
+@import './css/components/hero.module.css';
+@import './css/components/gl-scene.module.css';
+@import './css/components/main-content.module.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  /* --background-start-rgb: 214, 219, 220; */
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --background-rgb: 0, 0, 0;
+
+  --highlighted-text-color: rgba(20, 155, 255, 1);
+  --highlighted-text-color-dark: rgba(20, 115, 225, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/* @media (prefers-color-scheme: dark) {
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -25,10 +30,76 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   background-color: black;
+  background: radial-gradient(
+    circle,
+    rgba(15, 32, 32, 1) 0%,
+    rgba(15, 20, 20, 1) 100%
+  );
+  overscroll-behavior: none;
+  min-height: 100vh;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a[href^=https]:after {
+  content: ' \21D7';
+  display: inline-block;
+  padding-inline-start: 0.2rem;
+  font-size: 0.8rem;
+  vertical-align: text-bottom;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s ease;
+}
+a[href^=https]:hover:after {
+  color: rgba(255, 255, 255, .9);
+}
+a.-indent {
+  margin-inline-start: 0.6rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8em;
+  transition: color 0.2s ease;
+}
+a.-indent:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.link {
+  position: relative;
+
+  &:hover:before {
+    scale: 1 1;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 12px;
+    height: 1px;
+    scale: 0 1;
+    background-color: currentColor;
+    transform-origin: 0 100%;
+    transition: scale .5s ease;
+  }
+}
+
+.page-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 0;
+  padding: 1rem;
+  align-content: end;
+  width: 100%;
+  height: 100dvh;
+  color: white;
 }

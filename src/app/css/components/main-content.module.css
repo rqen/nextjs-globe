@@ -1,0 +1,132 @@
+
+.main-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: 0% -50%;
+  width: 40vw;
+  max-width: 470px;
+  height: 40vh;
+  max-height: 360px;
+  overflow: auto;
+}
+
+.main-content-inner {
+  background-image: linear-gradient(320deg, 
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 1) 65%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-size: 1000% 100%;
+  background-position: 100% 0%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: white;
+
+  animation: gradient-content-slidein 5.5s 4.8s linear forwards;
+}
+
+@keyframes gradient-content-slidein {
+  0% {
+    background-position: 100% 0%;
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+  }
+  99% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-image: unset;
+    /* background-position: 40% 0%; */
+    /* background: none; */
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+  }
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.project .-indent {
+  margin-inline-start: 1rem;
+  opacity: .6;
+}
+
+.-comments { /* ul */
+  li {
+    position: relative;
+  }
+
+  li:has(.comment) {
+    transition: color .2s ease;
+
+    &:after {
+      content: '💬';
+      display: inline;
+      padding-inline-start: .4rem;
+    }
+  }
+
+  li .comment {
+    display: none;
+    position: absolute;
+    bottom: .7rem;
+    left: 2rem;
+    max-width: 80%;
+    padding: 1rem;
+
+    font-size: .9em;
+    line-height: 1.45em;
+    color: #000;
+    background-color: #fff;
+    border-radius: 1rem 1rem 1rem 0;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      
+      background-color: transparent;
+      bottom: -.05rem;
+      left: -2rem;
+      height: 1rem;
+      width: 2rem;
+      border-bottom-right-radius: 1rem;
+      box-shadow: 1rem 0 0 0 white;
+    }
+  }
+
+  li:has(.comment):hover {
+    color: var(--highlighted-text-color);
+    cursor: pointer;
+
+    .comment {
+      display: block;
+    }
+  }
+}
+
+.outbound-content {
+  margin-block: .6rem;
+}
+.outbound-list {
+  display: flex;
+}
+.outbound-list li {
+  margin-inline-end: 2.6rem;
+}
+
+ul.-bullets {
+  /* list-style-type: "•"; */
+  list-style-type: "-";
+  list-style-position: outside;
+
+  li {
+    margin-inline-start: .8rem;
+    padding-inline-start: .8rem;
+  }
+}
+
