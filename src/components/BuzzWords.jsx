@@ -51,7 +51,7 @@ const BuzzItem = ({ children }) => {
 export default function BuzzWords() {
   return (
     <>
-      <p>
+      <p className='fwb'>
         Long list of buzz words I've worked with/in/on:
       </p>
       <ul className='-bullets -comments'>

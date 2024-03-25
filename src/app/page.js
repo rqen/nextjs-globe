@@ -26,7 +26,8 @@ export default function Home() {
             </p>
             <p>
               Over the years I've worked with a vast variety of technologies, and helped out a brunch of brands on the way. 
-              <br /><br />
+            </p>
+            <p className='fwb'>
               A selected few of those brands:
             </p>
             <ul className="projects-list">
@@ -120,7 +121,7 @@ export default function Home() {
 
             <BuzzWords />
 
-            <p>
+            <p className='fwb'>
               My setup:
             </p>
             <ul className='-bullets'>
@@ -146,8 +147,8 @@ export default function Home() {
               <li>I love my Git GUI, GitTower. But move over, "here's Johnny" aka. GitButler..</li>
             </ul>
 
-            <p>
-              My future should have more of these ingredients: 
+            <p className='fwb'>
+              My future could have more of these ingredients: 
             </p>
             <ul className='-bullets'>
               <li>GSAP</li>

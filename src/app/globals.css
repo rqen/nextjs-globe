@@ -103,3 +103,8 @@ a.-indent:hover {
   height: 100dvh;
   color: white;
 }
+
+.fwb,
+.rich-text .fwb {
+  font-weight: 500;
+}

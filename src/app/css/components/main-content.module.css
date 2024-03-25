@@ -57,6 +57,27 @@
   }
 }
 
+.main-content-inner > p:not(:first-child):not(:nth-child(2)):not(:nth-child(3)),
+.main-content-inner ul li {
+  animation: li-anim ease-out 1s forwards;
+  animation-timeline: view();
+}
+@keyframes li-anim {
+  0% {
+    opacity: 0;
+    translate: -100px -50%;
+  }
+  30% {
+    opacity: 1;
+    translate: 0% 0%;
+    /* transform: translateY(0); */
+  }
+}
+
+.main-content-inner > *:last-child {
+  margin-block-end: 6rem;
+}
+
 .projects-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
