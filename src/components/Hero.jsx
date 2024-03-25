@@ -12,7 +12,7 @@ export default function Hero () {
       >
       <h1 className="hero-text">
         <span className="text-row text-4xl font-bold">
-          <span className='regular-text'>CHRISTIAN</span> <span className='colored-text'><span className="gradient-text">RØEN</span></span>
+          <span className='regular-text'>CHRISTIAN</span> <span className='colored-text'><span className="gradient-text -top">RØEN</span></span>
         </span>
         <span className="text-row text-4xl font-bold">
           <span className='colored-text'><span className="gradient-text">RQEN</span></span><span className='regular-text'>.COM</span>

@@ -46,8 +46,8 @@
   }
   .gradient-text {
     --gradient-text-bg-rotation: -6;
-    --gradient-text-bg-x: 120;
-    --gradient-text-bg-y: 90;
+    --gradient-text-bg-x: 180;
+    --gradient-text-bg-y: 95;
     background-image: conic-gradient(
       from calc(var(--gradient-text-bg-rotation) * 1deg) at calc(var(--gradient-text-bg-x) * 1%) calc(var(--gradient-text-bg-y) * 1%), 
       var(--highlighted-text-color) 0% 25%, 
@@ -63,6 +63,11 @@
     -webkit-text-fill-color: transparent;
     transition: var(--gradient-text-bg-x) 1s 1s ease;
     animation: gradient-rotation 20s 6.5s linear forwards infinite;
+    /* animation: gradient-rotation 6s linear forwards infinite; */
+  }
+
+  .gradient-text.-top {
+    --gradient-text-bg-y: 178;
   }
 
   .regular-text {
@@ -75,13 +80,13 @@
 @keyframes gradient-rotation {
   0% {
     --gradient-text-bg-rotation: -6;
-    --gradient-text-bg-x: 120;
-    --gradient-text-bg-y: 90;
+    /* --gradient-text-bg-x: 120;
+    --gradient-text-bg-y: 90; */
   }
   30% {
     --gradient-text-bg-rotation: -6;
-    --gradient-text-bg-x: 120;
-    --gradient-text-bg-y: 90;
+    /* --gradient-text-bg-x: 120;
+    --gradient-text-bg-y: 90; */
   }
   100% {
     --gradient-text-bg-rotation: 354;

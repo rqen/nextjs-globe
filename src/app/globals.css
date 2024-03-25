@@ -16,6 +16,7 @@
 
   --highlighted-text-color: rgba(20, 155, 255, 1);
   --highlighted-text-color-dark: rgba(20, 115, 225, 1);
+  --highlighted-text-color-dark: #fff;
 }
 
 /* @media (prefers-color-scheme: dark) {
